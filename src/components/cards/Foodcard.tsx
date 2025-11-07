@@ -58,7 +58,7 @@ const Foodcard: React.FC<FoodCardProps> = ({
       <Button
         text="Place order"
         className={`text-xs md:text-sm mt-2 ${
-          white ? 'text-white bg-darkgreen' : 'bg-yellow text-darkgreen'
+          white ? 'text-white bg-darkgreen' : 'bg-white text-darkgreen'
         }`}
         icon
       />

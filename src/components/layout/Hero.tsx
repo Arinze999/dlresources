@@ -1,13 +1,48 @@
 import React from 'react';
 import Button from '../Button';
-import Foodcard from '../cards/Foodcard';
+import { HeroBg } from '../icons/HeroBg';
+import Floater from '../Floater';
+import HeroCircleCarousel from '../HeroCircleCarousel';
 
 const Hero = () => {
   return (
-    <div className="flex flex-col lg:flex-row  default-margin pt-10">
+    <div className="flex flex-col lg:flex-row default-margin pt-20 md:pt-30 2xl:pt-40">
+      {/* Floaters */}
+      <Floater
+        imageSrc="/images/float1.png"
+        positionRight="70%"
+        size="2.5rem"
+        fromDown
+      />
+
+      <Floater
+        imageSrc="/images/float2.png"
+        positionLeft="40%"
+        className="top-[70%]"
+        size="2.5rem"
+        fromLeft
+      />
+
+      <Floater
+        imageSrc="/images/float3.png"
+        positionLeft="10%"
+        className="top-[50%]"
+        size="2.5rem"
+        fromDown
+      />
+
+      <Floater
+        imageSrc="/images/float4.png"
+        positionLeft="60%"
+        className="top-[30%]"
+        size="2.5rem"
+        fromUp
+      />
+
+      {/*  */}
       <div className="w-full  flex flex-col">
         <div>
-          <h1 className="text-6xl lg:text-7xl font-bold text-center lg:text-left leading-normal">
+          <h1 className="text-6xl xl:text-7xl font-bold text-center lg:text-left leading-normal">
             Healthy <br /> <span className="text-yellow">Food</span> Is <br />{' '}
             Waiting for you
           </h1>
@@ -26,12 +61,17 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className=" pt-15 flex md:flex-row gap-4 md:gap-8 items-center md:items-start md:justify-center lg:justify-start">
+        {/* <div className=" pt-15 flex md:flex-row gap-4 md:gap-8 items-center md:items-start md:justify-center lg:justify-start">
           <Foodcard imageSrc="/images/salad1.jpeg" white />
           <Foodcard imageSrc="/images/salad1.jpeg" />
-        </div>
+        </div> */}
       </div>
-      <div className="w-full  hidden lg:block">2</div>
+      <div className="w-full hidden lg:flex max-h-120 xl:max-h-none items-end justify-end h-fit">
+        <div className="absolute inset-x-0 -z-2 ml-auto top-0 right-0 w-[50vw] opacity-70">
+          <HeroBg />
+        </div>
+        <HeroCircleCarousel />
+      </div>
     </div>
   );
 };

@@ -16,7 +16,16 @@ import { Menu } from '../icons/Menu';
 const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
 
+  const [scrolled, setScrolled] = useState(false);
+
   const toggleNav = () => setNavOpen((prev) => !prev);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -29,7 +38,11 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="bg-white sticky w-full top-0 z-50 border-b-myGray5 border-b">
+    <header
+      className={`sticky w-full top-0 z-50 transition-colors duration-300 ${
+        scrolled ? 'bg-white/90 backdrop-blur' : 'bg-transparent'
+      }`}
+    >
       <div className="default-margin flex justify-between items-center h-[4.1rem] md:h-23 relative">
         <CompanyLogo
           close={() => {
