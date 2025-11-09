@@ -21,7 +21,7 @@ const Testimonials = () => {
         imageSrc="/images/float1.png"
         positionLeft="10%"
         className="top-full"
-        size="4rem"
+        size="2.5rem"
         fromLeft
       />
 
@@ -29,7 +29,7 @@ const Testimonials = () => {
         imageSrc="/images/float2.png"
         positionRight="10%"
         className="top-35"
-        size="4rem"
+        size="2.5rem"
         fromDown
       />
     </div>
