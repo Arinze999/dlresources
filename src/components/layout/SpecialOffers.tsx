@@ -13,9 +13,15 @@ const SpecialOffers = () => {
       <h3 className="text-darkgreen2 general-title font-rubik">
         Special Offers
       </h3>
-      <p className='text-center text-gray-600'>For your events and celebrations!</p>
-      <div className="absolute inset-x-0 -z-2 ml-auto top-0 right-0 w-full h-full opacity-30 overflow-hidden">
-        <Pattern size={800} className="w-full h-auto" idPrefix="hero-bg" />
+      <p className="text-center text-gray-600">
+        For your events and celebrations!
+      </p>
+      <div className="absolute inset-0 -z-10 w-full h-full opacity-30 overflow-hidden pointer-events-none">
+        <Pattern
+          className="w-full h-full"
+          preserveAspectRatio="none"
+          idPrefix="hero-bg"
+        />
       </div>
       <div className="flex flex-col md:flex-row justify-center gap-8">
         <div className="flex flex-col justify-center gap-8">
