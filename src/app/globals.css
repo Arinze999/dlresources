@@ -3,11 +3,23 @@
 body {
   font-family: var(--font-poppins);
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-/* helper class for Inter font */
 .font-inter {
   font-family: var(--font-inter), sans-serif;
+}
+
+.font-lora {
+  font-family: var(--font-lora);
+}
+
+.font-rubik {
+  font-family: var(--font-rubik);
+}
+
+.font-chela {
+  font-family: var(--font-chela);
 }
 
 .scrollbar-hide::-webkit-scrollbar {
@@ -67,7 +79,7 @@ body {
   }
 
   .general-title {
-    @apply md:text-5xl text-2xl font-bold text-center;
+    @apply md:text-5xl text-3xl font-bold text-center;
   }
 
   .general-subtitle {

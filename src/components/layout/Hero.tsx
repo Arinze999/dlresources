@@ -42,7 +42,7 @@ const Hero = () => {
       {/*  */}
       <div className="w-full  flex flex-col">
         <div>
-          <h1 className="text-6xl xl:text-7xl font-bold text-center lg:text-left leading-normal">
+          <h1 className="text-6xl xl:text-7xl font-bold text-center lg:text-left leading-normal font-rubik">
             Healthy <br /> <span className="text-yellow">Food</span> Is <br />{' '}
             Waiting for you
           </h1>
