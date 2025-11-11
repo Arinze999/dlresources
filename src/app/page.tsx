@@ -1,4 +1,6 @@
 import UpDown from '@/components/icons/UpDown';
+import Contact from '@/components/layout/Contact';
+import Faqs from '@/components/layout/Faqs';
 import Featured from '@/components/layout/Featured';
 import Hero from '@/components/layout/Hero';
 import Kitchen from '@/components/layout/Kitchen';
@@ -14,10 +16,13 @@ export default function Home() {
       <Specials />
       <Featured />
       <SpecialOffers />
-      <Testimonials />
+      <Who />
       <UpDown className="w-full h-auto" />
       <Kitchen />
-      <Who />
+      <Testimonials />
+      <UpDown className="w-full h-auto" />
+      <Faqs />
+      <Contact />
     </div>
   );
 }

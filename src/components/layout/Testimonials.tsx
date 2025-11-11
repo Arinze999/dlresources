@@ -2,6 +2,7 @@ import React from 'react';
 import TestimonialCard from '../cards/TestimonialCard';
 import { testimonials } from '@/data/testimonial';
 import Floater from '../Floater';
+import Image from 'next/image';
 
 const Testimonials = () => {
   return (
@@ -32,6 +33,21 @@ const Testimonials = () => {
         size="2.5rem"
         fromDown
       />
+
+      <div className="absolute inset-0 -z-10 opacity-20 md:opacity-10 overflow-hidden">
+        <Image
+          src="/images/veggies.png"
+          alt="background"
+          fill
+          priority={false}
+          className="object-contain w-full h-full md:rotate-90 scale-130 md:scale-200"
+        />
+
+        <div className="absolute inset-0 backdrop-blur-sm" />
+
+        <div className="absolute inset-x-0 top-0 h-[20%] bg-linear-to-b from-white to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-[20%] bg-linear-to-t from-white to-transparent" />
+      </div>
     </div>
   );
 };

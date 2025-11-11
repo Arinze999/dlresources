@@ -27,7 +27,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   return (
     <figure
       className={[
-        'w-full rounded-2xl border border-gray-200 bg-white p-2 md:p-4 shadow-sm',
+        'w-full rounded-2xl border border-gray-200/30 bg-white/30 p-2 md:p-4 shadow-sm',
         className || '',
       ].join(' ')}
     >

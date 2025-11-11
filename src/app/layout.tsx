@@ -1,7 +1,14 @@
 import type { Metadata } from 'next';
-import { Inter, Poppins, Lora, Rubik_Moonrocks, Chela_One } from 'next/font/google';
+import {
+  Inter,
+  Poppins,
+  Lora,
+  Rubik_Moonrocks,
+  Chela_One,
+} from 'next/font/google';
 import './globals.css';
 import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 
 const poppins = Poppins({
   weight: ['400'],
@@ -50,6 +57,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
