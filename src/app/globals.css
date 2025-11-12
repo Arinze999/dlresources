@@ -82,6 +82,10 @@ body {
     @apply md:text-5xl text-3xl font-bold text-center;
   }
 
+  .general-title2 {
+    @apply md:text-5xl text-3xl font-bold;
+  }
+
   .general-subtitle {
     @apply md:text-lg text-center max-w-[850px];
   }

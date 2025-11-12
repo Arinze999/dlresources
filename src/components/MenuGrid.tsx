@@ -1,13 +1,13 @@
 'use client';
 
-import { menuDemo } from '@/data/menuDemo';
+import { baseMenu } from '@/data/menu';
 import FoodCard2 from './cards/FoodCard2';
 
 export default function MenuGrid() {
   return (
     <section className="max-w-6xl">
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {menuDemo.map((item) => (
+        {baseMenu.slice(0, 3).map((item) => (
           <FoodCard2
             key={item.id}
             imageSrc={item.imageSrc}

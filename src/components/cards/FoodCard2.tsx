@@ -13,6 +13,7 @@ type FoodCard2Props = {
   onOrder?: (e: MouseEvent<HTMLButtonElement>) => void;
   badge?: string; // optional small badge at the top-left of the image
   className?: string; // optional extra classes
+  outOfStock?: boolean;
 };
 
 const formatPrice = (value: number, currency = 'NGN') =>
@@ -28,10 +29,10 @@ export default function FoodCard2({
   description,
   priceFrom,
   currency = 'NGN',
-  orderHref,
   onOrder,
   badge,
   className = '',
+  outOfStock,
 }: FoodCard2Props) {
   return (
     <article
@@ -69,22 +70,27 @@ export default function FoodCard2({
             </span>
           </div>
 
-          {orderHref ? (
+          {/* {orderHref ? (
             <a
               href={orderHref}
               className="rounded-full px-4 py-2 text-sm font-medium text-white bg-darkgreen hover:bg-darkgreen2"
             >
               Order now
             </a>
-          ) : (
-            <button
-              type="button"
-              onClick={onOrder}
-              className="rounded-full px-4 py-2 text-sm font-medium text-white bg-darkgreen hover:bg-darkgreen2"
-            >
-              Order now
-            </button>
-          )}
+          ) : ( */}
+          <button
+            type="button"
+            onClick={onOrder}
+            className="rounded-full px-4 py-2 text-sm font-medium text-white bg-darkgreen hover:bg-darkgreen2 disabled:bg-white disabled:cursor-not-allowed"
+            disabled={outOfStock}
+          >
+            {outOfStock ? (
+              <span className="text-red-800">- out of stock</span>
+            ) : (
+              'Order now'
+            )}
+          </button>
+          {/* )} */}
         </div>
       </div>
     </article>
