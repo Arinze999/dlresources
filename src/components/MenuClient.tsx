@@ -5,23 +5,37 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import FoodCard2 from '@/components/cards/FoodCard2';
 import Pagination from '@/components/Pagination';
 import { DishCategory, getMenuPage } from '@/data/menu';
-
-
+import Banner from './Banner';
 
 // If you kept the old path:
 // import { getMenuPage } from '@/data/menuDemo-helpers';
 
 const allCategories: DishCategory[] = [
-  'rice','soups','grill','snacks','wraps','pasta','burgers','fish','salads','continental',
+  'rice',
+  'soups',
+  'grill',
+  'snacks',
+  'wraps',
+  'pasta',
+  'burgers',
+  'fish',
+  'salads',
+  'continental',
 ];
 
-type SortKey = 'price-asc' | 'price-desc' | 'rating-desc' | 'name-asc' | 'name-desc';
+type SortKey =
+  | 'price-asc'
+  | 'price-desc'
+  | 'rating-desc'
+  | 'name-asc'
+  | 'name-desc';
 
 export default function MenuClient() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const categoryParam = (searchParams.get('category') as DishCategory | null) ?? null;
+  const categoryParam =
+    (searchParams.get('category') as DishCategory | null) ?? null;
   const qParam = searchParams.get('q') ?? '';
   const availParam = searchParams.get('available') === '1';
   const sortParam = (searchParams.get('sort') as SortKey | null) ?? null;
@@ -36,7 +50,10 @@ export default function MenuClient() {
         q: qParam,
         category: categoryParam,
         availableOnly: availParam,
-        maxPrice: typeof maxPriceNum === 'number' && !Number.isNaN(maxPriceNum) ? maxPriceNum : null,
+        maxPrice:
+          typeof maxPriceNum === 'number' && !Number.isNaN(maxPriceNum)
+            ? maxPriceNum
+            : null,
         sort: sortParam,
         page: Number.isNaN(pageParam) ? 1 : pageParam,
         pageSize: 6, // <= requested
@@ -56,6 +73,11 @@ export default function MenuClient() {
 
   return (
     <div className="default-margin relative py-10 lg:py-20 flex flex-col gap-8">
+      <Banner
+        title="Menu"
+        imageSrc="/images/land4.png"
+        className="rounded-3xl"
+      />
       <h3 className="text-darkgreen2 general-title2 font-lora text-center">
         Here is our diverse Menu and Food Combos
       </h3>
@@ -64,7 +86,9 @@ export default function MenuClient() {
       <div className="flex flex-wrap gap-2 justify-center">
         <button
           className={`px-4 py-1.5 rounded-full text-[13px] transition ${
-            !categoryParam ? 'bg-emerald-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+            !categoryParam
+              ? 'bg-emerald-600 text-white'
+              : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
           }`}
           onClick={() => pushParams({ category: null, page: null })}
         >
@@ -76,9 +100,13 @@ export default function MenuClient() {
           return (
             <button
               key={cat}
-              onClick={() => pushParams({ category: active ? null : cat, page: null })}
+              onClick={() =>
+                pushParams({ category: active ? null : cat, page: null })
+              }
               className={`px-4 py-1.5 rounded-full text-[13px] transition ${
-                active ? 'bg-emerald-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                active
+                  ? 'bg-emerald-600 text-white'
+                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
               }`}
             >
               {label}
