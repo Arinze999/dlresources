@@ -1,7 +1,13 @@
-import React from 'react';
+
+import BlogClient from '@/components/BlogClient';
+import React, { Suspense } from 'react';
 
 const Blog = () => {
-  return <div>Blog</div>;
+  return (
+    <Suspense fallback={'Loading...'}>
+      <BlogClient />
+    </Suspense>
+  );
 };
 
 export default Blog;

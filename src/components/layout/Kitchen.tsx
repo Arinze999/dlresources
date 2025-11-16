@@ -15,7 +15,7 @@ const Kitchen = () => {
 
       <section className="max-w-6xl">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {blogDemo.map((post) => (
+          {blogDemo.slice(0, 3).map((post) => (
             <BlogCard
               key={post.id}
               imageSrc={post.imageSrc}
@@ -40,7 +40,10 @@ const Kitchen = () => {
       </div>
 
       <div>
-        <Link href={`/${BLOG}`} className="text-darkgreen flex gap-3 items-center">
+        <Link
+          href={`/${BLOG}`}
+          className="text-darkgreen flex gap-3 items-center"
+        >
           View our Blogs <ArrowRight />
         </Link>
       </div>
