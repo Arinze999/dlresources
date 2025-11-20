@@ -36,7 +36,7 @@ export default function FoodCard2({
 }: FoodCard2Props) {
   return (
     <article
-      className={`group w-full overflow-hidden rounded-2xl border border-gray-100/10 bg-white shadow-sm transition hover:shadow-md ${className}`}
+      className={`group w-full overflow-hidden rounded-2xl border border-gray-100/10 bg-white shadow-sm transition hover:shadow-md sm:max-w-105 ${className}`}
       aria-label={name}
     >
       <div className="relative aspect-video w-full overflow-hidden">

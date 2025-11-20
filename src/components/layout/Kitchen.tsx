@@ -15,16 +15,25 @@ const Kitchen = () => {
 
       <section className="max-w-6xl">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {blogDemo.slice(0, 3).map((post) => (
-            <BlogCard
+          {blogDemo.slice(0, 3).map((post, index) => (
+            <div
               key={post.id}
-              imageSrc={post.imageSrc}
-              title={post.title}
-              excerpt={post.excerpt}
-              date={post.date}
-              readMoreHref={post.readMoreHref}
-              badge={post.badge}
-            />
+              className={
+                index === 2
+                  ? 'sm:col-span-2 sm:flex sm:justify-center lg:col-span-1'
+                  : ''
+              }
+            >
+              <BlogCard
+                key={post.id}
+                imageSrc={post.imageSrc}
+                title={post.title}
+                excerpt={post.excerpt}
+                date={post.date}
+                readMoreHref={post.readMoreHref}
+                badge={post.badge}
+              />
+            </div>
           ))}
         </div>
       </section>
