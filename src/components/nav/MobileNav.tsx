@@ -21,7 +21,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, close }) => {
   return (
     <div
       className={`fixed top-0 left-0 h-screen w-full bg-myWhite shadow pb-4 -z-10 transition-transform duration-300 flex flex-col gap-12 bg-white md:hidden ${
-        isOpen ? 'translate-y-0' : '-translate-y-full'
+        isOpen ? 'translate-y-0' : '-translate-y-[200%]'
       }`}
     >
       <ul className="flex flex-col w-full text-xl mt-28 gap-2">

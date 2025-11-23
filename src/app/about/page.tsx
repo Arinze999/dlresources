@@ -5,13 +5,13 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className="default-margin relative py-10 lg:py-20 flex flex-col gap-20">
+    <div className="default-padding relative py-10 lg:py-20 flex flex-col gap-20">
       <Banner
         title="About Us"
         imageSrc="/images/land3.png"
         className="rounded-3xl"
       />
-{/* 
+      {/* 
       <h3 className="text-darkgreen2 general-title2 font-lora text-center">
         About Us
       </h3> */}
@@ -49,7 +49,21 @@ const About = () => {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-center gap-8">
+      <div className="flex flex-col-reverse md:flex-row justify-center gap-8 min-h-160">
+        <div className="absolute inset-0 -z-10  overflow-hidden">
+          <Image
+            src="/images/teaa.png"
+            alt="background"
+            fill
+            priority={false}
+            className="object-contain w-full h-full md:rotate-90 scale-130 md:scale-200"
+          />
+
+          <div className="absolute inset-0 backdrop-blur-sm" />
+
+          <div className="absolute inset-x-0 top-0 h-[20%] bg-linear-to-b from-white to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-[20%] bg-linear-to-t from-white to-transparent" />
+        </div>
         <div className="relative w-full max-w-150 flex-1 overflow-hidden rounded-2xl min-h-50 md:block">
           <Image
             src={'/images/people.png'}
@@ -60,15 +74,15 @@ const About = () => {
             className="object-cover will-change-transform pointer-events-none"
           />
         </div>
-        <div className="flex flex-col justify-center gap-8 w-full max-w-150 relative">
-          <Circles
-            size={400}
+        <div className="flex flex-col justify-start gap-8 w-full max-w-150 relative">
+          {/* <Circles
+            size={300}
             primaryFill="#ffd700"
             primaryStroke="#207176"
             accentFill="#D1ED5E"
             accentStroke="#AACF17"
             className="absolute top-0 opacity-10"
-          />
+          /> */}
           <h4 className="text-lg font-semibold text-darkgreen2">
             Meet Our CEO
           </h4>
@@ -82,6 +96,11 @@ const About = () => {
             body and soul through her work, striving to make a positive impact
             through Deola Resources.
           </p>
+        </div>
+      </div>
+
+      <div className="flex flex-col md:flex-row justify-center gap-8">
+        <div className="flex-1 max-w-2xl">
           <h4 className="text-lg font-semibold text-darkgreen2">BRAND STORY</h4>
           <p>
             As Deola Resources continues to grow, the company remains dedicated
@@ -105,6 +124,40 @@ const About = () => {
             is also reflected in the artistry and attention to detail found in
             every product.
           </p>
+        </div>
+        <div className="grid grid-cols-2 gap-6 place-items-center max-w-lg flex-1">
+          <div className="relative w-full aspect-square max-w-60 rounded-2xl overflow-hidden">
+            <Image
+              src="/images/spicy.jpeg"
+              alt="salad"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="relative w-full aspect-square max-w-60 rounded-2xl overflow-hidden">
+            <Image
+              src="/images/farm.jpeg"
+              alt="salad"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="relative w-full aspect-square max-w-60 rounded-2xl overflow-hidden">
+            <Image
+              src="/images/chef.jpeg"
+              alt="salad"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="relative w-full aspect-square max-w-60 rounded-2xl overflow-hidden">
+            <Image
+              src="/images/ofada.jpeg"
+              alt="salad"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
       </div>
     </div>
