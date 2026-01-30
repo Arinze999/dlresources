@@ -1,32 +1,20 @@
 export const questions = [
   {
     id: 1,
-    question: 'How does ContentFix work?',
+    question: 'Are Deola Resources products vegan?',
     answer:
-      'Paste your idea, pick a platform and tone, then hit “Polish.” We rewrite, clean grammar, and format it for instant posting.',
+      'While not all of our products are vegan, many are. We clearly label our products to indicate which ones are vegan-friendly.',
   },
   {
     id: 2,
-    question: 'Which platforms are supported?',
+    question: 'How long does it take to receive my order?',
     answer:
-      'LinkedIn, Twitter (X), Instagram, Threads, and “official use” formats like emails or memos.',
+      'We typically process orders within 24-48 hours. Delivery times vary depending on your location, but most orders are delivered within 3-5 business days.',
   },
   {
     id: 3,
-    question: 'Can it match my brand voice?',
+    question: "Can I return or exchange products if I'm not satisfied?",
     answer:
-      'Yes. Save brand-voice presets so every post follows your style, wording, and formatting rules.',
-  },
-  {
-    id: 4,
-    question: 'Is there a free option?',
-    answer:
-      'Yes. Try a one-off guest conversion for free. Sign up to unlock more conversions and features.',
-  },
-  {
-    id: 5,
-    question: 'Can I tweak the output?',
-    answer:
-      'Absolutely. Edit inline, regenerate with new tones or formats, and copy/export when ready.',
+      'Yes. We offer a 30-day return policy on all products. If you are not satisfied, please contact our customer service team to initiate a return or exchange.',
   },
 ];
