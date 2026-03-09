@@ -9,7 +9,7 @@ import Floater from '../Floater';
 
 const Contact = () => {
   return (
-    <div className="default-margin relative py-30 lg:py-40 flex flex-col gap-12 justify-center items-center">
+    <div className="default-margin relative py-30 pt-0 lg:py-40 flex flex-col gap-12 justify-center items-center">
       <h3 className="text-darkgreen2 general-title font-lora">
         Ready to Order?
       </h3>

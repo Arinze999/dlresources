@@ -6,8 +6,8 @@ type BlogCardProps = {
   imageSrc: string;
   title: string;
   excerpt: string;
-  date: string; // e.g. 'Nov 9, 2025'
-  readMoreHref: string; // link to full blog post
+  date: string;
+  readMoreHref: string; 
   badge?: string;
   className?: string;
 };
@@ -23,11 +23,11 @@ export default function BlogCard({
 }: BlogCardProps) {
   return (
     <article
-      className={`group w-full overflow-hidden rounded-2xl border border-gray-100/10 bg-white shadow-sm transition hover:shadow-md sm:max-w-105 ${className}`}
+      className={`group w-full h-80 overflow-hidden rounded-2xl border border-gray-100/10 bg-white shadow-sm transition hover:shadow-md sm:max-w-105 ${className}`}
       aria-label={title}
     >
       {/* Image */}
-      <div className="relative aspect-video w-full overflow-hidden">
+      <div className="relative aspect-video h-[45%] w-full overflow-hidden">
         <Image
           src={imageSrc}
           alt={title}
@@ -44,8 +44,8 @@ export default function BlogCard({
       </div>
 
       {/* Text */}
-      <div className="flex flex-col gap-2 p-4">
-        <h3 className="text-base font-semibold leading-tight md:text-lg">
+      <div className="flex flex-col justify-between h-[55%] gap-2 p-4">
+        <h3 className="text-base font-semibold leading-tight line-clamp-2 md:text-lg">
           {title}
         </h3>
 

@@ -1,25 +1,19 @@
 'use client';
 
-import React, { useMemo } from 'react';
 import BlogCard from './cards/BlogCard';
-import { getBlogPage } from '@/data/blogDemo';
-import { useSearchParams } from 'next/navigation';
 import Pagination from './Pagination';
+import { BlogProvider, useBlogContext } from '@/context/BlogContext';
 
-const BlogClient = () => {
-  const searchParams = useSearchParams();
+const BlogContent = () => {
+  const { paginatedBlogPosts, totalPages, loading, error } = useBlogContext();
 
-  const pageParam = Number(searchParams.get('page') || '1');
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
-  // Build the page result (9 per page)
-  const { items, totalPages } = useMemo(
-    () =>
-      getBlogPage({
-        page: Number.isNaN(pageParam) ? 1 : pageParam,
-        pageSize: 6, // <= requested
-      }),
-    [pageParam]
-  );
+  if (error) {
+    return <p>{error}</p>;
+  }
 
   return (
     <>
@@ -28,25 +22,35 @@ const BlogClient = () => {
       </h3>
 
       <section className="w-full">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 place-items-center">
-          {items.map((post) => (
+        <div className="grid grid-cols-1 place-items-center gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {paginatedBlogPosts.map((post) => (
             <BlogCard
-              key={post.id}
-              imageSrc={post.imageSrc}
+              key={post.slug}
+              imageSrc={
+                post.coverImage?.fields?.file?.url
+                  ? `https:${post.coverImage.fields.file.url}`
+                  : ''
+              }
               title={post.title}
               excerpt={post.excerpt}
-              date={post.date}
-              readMoreHref={post.readMoreHref}
-              badge={post.badge}
+              date={post.publishedAt}
+              readMoreHref={`/blog/${post.slug}`}
               className="w-full md:max-w-sm"
             />
           ))}
         </div>
       </section>
 
-      {/* Pager */}
       <Pagination totalPages={totalPages} />
     </>
+  );
+};
+
+const BlogClient = () => {
+  return (
+    <BlogProvider postsPerPage={6}>
+      <BlogContent />
+    </BlogProvider>
   );
 };
 

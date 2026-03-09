@@ -1,7 +1,11 @@
 import Banner from '@/components/Banner';
-import { Circles } from '@/components/icons/Circles';
+import { Metadata } from 'next';
 import Image from 'next/image';
-import React from 'react';
+
+export const metadata: Metadata = {
+  title: 'About - Deola resources',
+  description: 'About Deola Resources, Best Food Vendor in Owerri',
+};
 
 const About = () => {
   return (
@@ -37,7 +41,7 @@ const About = () => {
           </p>
         </div>
 
-        <div className="relative w-full max-w-150 flex-1 overflow-hidden rounded-2xl min-h-160 md:block">
+        <div className="relative w-full max-w-150 flex-1 overflow-hidden rounded-2xl min-h-100 md:block">
           <Image
             src={'/images/about.png'}
             alt="dish"
@@ -45,6 +49,7 @@ const About = () => {
             quality={100}
             priority
             className="object-cover will-change-transform pointer-events-none"
+            sizes="600px"
           />
         </div>
       </div>
@@ -57,6 +62,7 @@ const About = () => {
             fill
             priority={false}
             className="object-contain w-full h-full md:rotate-90 scale-130 md:scale-200"
+            sizes="600px"
           />
 
           <div className="absolute inset-0 backdrop-blur-sm" />
@@ -64,14 +70,16 @@ const About = () => {
           <div className="absolute inset-x-0 top-0 h-[20%] bg-linear-to-b from-white to-transparent" />
           <div className="absolute inset-x-0 bottom-0 h-[20%] bg-linear-to-t from-white to-transparent" />
         </div>
-        <div className="relative w-full max-w-150 flex-1 overflow-hidden rounded-2xl min-h-50 md:block">
+        <div className="relative w-full max-w-150 flex-1 overflow-hidden rounded-2xl min-h-100 bg-yellow/5">
           <Image
-            src={'/images/people.png'}
+            src={'/images/deola.png'}
             alt="dish"
             fill
             quality={100}
             priority
             className="object-cover will-change-transform pointer-events-none"
+            sizes="1200px"
+            unoptimized
           />
         </div>
         <div className="flex flex-col justify-start gap-8 w-full max-w-150 relative">
@@ -132,6 +140,7 @@ const About = () => {
               alt="salad"
               fill
               className="object-cover"
+              sizes="600px"
             />
           </div>
           <div className="relative w-full aspect-square max-w-60 rounded-2xl overflow-hidden">
@@ -140,6 +149,7 @@ const About = () => {
               alt="salad"
               fill
               className="object-cover"
+              sizes="600px"
             />
           </div>
           <div className="relative w-full aspect-square max-w-60 rounded-2xl overflow-hidden">
@@ -148,6 +158,7 @@ const About = () => {
               alt="salad"
               fill
               className="object-cover"
+              sizes="600px"
             />
           </div>
           <div className="relative w-full aspect-square max-w-60 rounded-2xl overflow-hidden">
@@ -156,6 +167,7 @@ const About = () => {
               alt="salad"
               fill
               className="object-cover"
+              sizes="600px"
             />
           </div>
         </div>

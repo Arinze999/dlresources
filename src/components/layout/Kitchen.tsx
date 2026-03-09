@@ -1,12 +1,22 @@
+'use client';
+
 import React from 'react';
-import { blogDemo } from '@/data/blogDemo';
 import BlogCard from '../cards/BlogCard';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BLOG } from '@/routes/routes';
 import { ArrowRight } from '../icons/ArrowRight';
+import { useBlogContext } from '@/context/BlogContext';
 
 const Kitchen = () => {
+  const { totalPosts, blogPosts } = useBlogContext();
+
+  const firstThree = blogPosts.slice(0, 3);
+
+  const isEmpty = totalPosts === 0;
+
+  if (isEmpty) return <div></div>;
+
   return (
     <div className="default-padding bg-myGray6 relative -mt-1 pt-10 lg:pt-0 pb-30 lg:pb-40 flex flex-col gap-12 justify-center items-center">
       <h3 className="text-darkgreen2 general-title font-rubik">
@@ -15,9 +25,9 @@ const Kitchen = () => {
 
       <section className="max-w-6xl">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {blogDemo.slice(0, 3).map((post, index) => (
+          {firstThree.map((post, index) => (
             <div
-              key={post.id}
+              key={post.slug}
               className={
                 index === 2
                   ? 'sm:col-span-2 sm:flex sm:justify-center lg:col-span-1'
@@ -25,13 +35,17 @@ const Kitchen = () => {
               }
             >
               <BlogCard
-                key={post.id}
-                imageSrc={post.imageSrc}
+                key={post.slug}
+                imageSrc={
+                  post.coverImage?.fields?.file?.url
+                    ? `https:${post.coverImage.fields.file.url}`
+                    : ''
+                }
                 title={post.title}
                 excerpt={post.excerpt}
-                date={post.date}
-                readMoreHref={post.readMoreHref}
-                badge={post.badge}
+                date={post.publishedAt}
+                readMoreHref={`/blog/${post.slug}`}
+                className="w-full md:max-w-sm"
               />
             </div>
           ))}

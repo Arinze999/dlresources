@@ -130,7 +130,7 @@ export default function Footer() {
         </div>
 
         {/* Join the community */}
-        {/* <div className="flex-1">
+        <div className="flex-1">
           <p className="font-semibold relative w-fit mb-5">
             Join the community
             <span className="absolute bg-deolaYellow left-0 -bottom-2.5 w-[50%] h-[3px]" />
@@ -142,24 +142,24 @@ export default function Footer() {
           >
             <input
               type="email"
-              className="email-input w-full h-full text-black text-[12px] p-2 border-none outline-none"
+              className="email-input w-full h-full text-white text-[12px] p-2 border-none outline-none"
               placeholder="Enter email address"
               aria-label="Email address"
             />
             <button
               type="submit"
-              className="email-submit w-16 h-full absolute right-0 bottom-0 bg-deolaYellow rounded-md flex items-center justify-center"
+              className=" w-16 h-full absolute right-0 bottom-0 bg-yellow rounded-md flex items-center justify-center"
               aria-label="Subscribe"
             >
               <Image
-                src="/assets/icons/send.png"
+                src="/images/send.png"
                 alt="Send"
-                width={18}
-                height={18}
+                width={20}
+                height={20}
               />
             </button>
           </form>
-        </div> */}
+        </div>
       </div>
 
       <p className="w-full text-[12px] text-center py-2">

@@ -1,5 +1,12 @@
 import Banner from '@/components/Banner';
+import { Metadata } from 'next';
 import type React from 'react';
+
+export const metadata: Metadata = {
+  title: 'Deola resources Blog',
+  description: 'Welcome to our Blog',
+};
+
 export default function BlogsLayout({
   children,
 }: // modal,

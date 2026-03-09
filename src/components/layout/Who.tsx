@@ -16,6 +16,7 @@ const Who = () => {
               alt="salad"
               fill
               className="object-cover"
+               sizes='600px'
             />
           </div>
           <div className="relative w-full aspect-square max-w-60 rounded-2xl overflow-hidden">
@@ -24,6 +25,7 @@ const Who = () => {
               alt="salad"
               fill
               className="object-cover"
+               sizes='600px'
             />
           </div>
           <div className="relative w-full aspect-square max-w-60 rounded-2xl overflow-hidden">
@@ -32,6 +34,7 @@ const Who = () => {
               alt="salad"
               fill
               className="object-cover"
+               sizes='600px'
             />
           </div>
           <div className="relative w-full aspect-square max-w-60 rounded-2xl overflow-hidden">
@@ -40,6 +43,7 @@ const Who = () => {
               alt="salad"
               fill
               className="object-cover"
+               sizes='600px'
             />
           </div>
         </div>

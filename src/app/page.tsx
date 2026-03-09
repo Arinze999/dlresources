@@ -1,4 +1,5 @@
 import UpDown from '@/components/icons/UpDown';
+import UpDownGradient from '@/components/icons/UpDownGradient';
 import Contact from '@/components/layout/Contact';
 import Faqs from '@/components/layout/Faqs';
 import Featured from '@/components/layout/Featured';
@@ -8,6 +9,7 @@ import SpecialOffers from '@/components/layout/SpecialOffers';
 import Specials from '@/components/layout/Specials';
 import Testimonials from '@/components/layout/Testimonials';
 import Who from '@/components/layout/Who';
+import { BlogProvider } from '@/context/BlogContext';
 
 export default function Home() {
   return (
@@ -17,11 +19,15 @@ export default function Home() {
       <Featured />
       <SpecialOffers />
       <Who />
-      <UpDown className="w-full h-auto" />
-      <Kitchen />
+      <UpDownGradient className="w-full h-40" />
+      <BlogProvider>
+        <Kitchen />
+      </BlogProvider>
+      <UpDownGradient className="w-full h-40 rotate-180" />
       <Testimonials />
       <UpDown className="w-full h-auto" />
       <Faqs />
+      <UpDownGradient className="w-full h-40 rotate-180" />
       <Contact />
     </div>
   );

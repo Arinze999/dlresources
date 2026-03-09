@@ -70,6 +70,7 @@ const Floater: React.FC<FloaterProps> = ({
         quality={85}
         priority
         className="object-cover transition-transform duration-500 ease-out will-change-transform"
+        sizes='1.25rem'
       />
 
       {/* animations */}

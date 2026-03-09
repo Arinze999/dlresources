@@ -9,7 +9,7 @@ const Faqs = () => {
   const [openId, setOpenId] = useState<number | null>(null);
 
   return (
-    <div className="default-padding bg-myGray6 relative -mt-1 pt-10 lg:pt-0 pb-30 lg:pb-40 flex flex-col gap-12 justify-center items-center">
+    <div className="default-padding bg-myGray6 relative -mt-1 pt-10 lg:pt-0 pb-0 lg:pb-40 flex flex-col gap-12 justify-center items-center">
       <h3 className="text-darkgreen2 general-title font-rubik">FAQs</h3>
       <div className="absolute w-full top-0 h-full opacity-5">
         <Image

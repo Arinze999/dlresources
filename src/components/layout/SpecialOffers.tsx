@@ -61,6 +61,7 @@ const SpecialOffers = () => {
             quality={100}
             priority
             className="object-cover will-change-transform pointer-events-none"
+            sizes='600px'
           />
         </div>
       </div>

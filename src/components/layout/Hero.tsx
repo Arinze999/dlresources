@@ -43,8 +43,8 @@ const Hero = () => {
       <div className="w-full  flex flex-col">
         <div>
           <h1 className="text-6xl xl:text-7xl font-bold text-center lg:text-left leading-normal font-rubik">
-            Healthy <br /> <span className="text-yellow">Food</span> Is <br />{' '}
-            Waiting for you
+            The <br /> <span className="text-yellow">Delight</span> In <br />{' '}
+          Food
           </h1>
           <p className="text-sm text-center lg:text-left text-gray-600">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos

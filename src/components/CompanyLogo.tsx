@@ -23,7 +23,7 @@ const CompanyLogo = ({
             alt="logo"
             height={50}
             width={50}
-            className="mr-3 rounded-lg"
+            className="mr-3 rounded-lg w-auto h-auto"
           />
         <span className="hidden md:flex">Deola Resources</span>
       </h3>

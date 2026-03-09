@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import TestimonialCard from '../cards/TestimonialCard';
 import { testimonials } from '@/data/testimonial';
 import Floater from '../Floater';
@@ -22,6 +22,7 @@ const Testimonials = () => {
     }, AUTO_SCROLL_INTERVAL);
 
     return () => clearInterval(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [index]);
 
   return (
