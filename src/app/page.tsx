@@ -10,6 +10,7 @@ import Specials from '@/components/layout/Specials';
 import Testimonials from '@/components/layout/Testimonials';
 import Who from '@/components/layout/Who';
 import { BlogProvider } from '@/context/BlogContext';
+import { Suspense } from 'react';
 
 export default function Home() {
   return (
@@ -20,9 +21,11 @@ export default function Home() {
       <SpecialOffers />
       <Who />
       <UpDownGradient className="w-full h-40" />
-      <BlogProvider>
-        <Kitchen />
-      </BlogProvider>
+      <Suspense fallback={<div>Loading...</div>}>
+        <BlogProvider>
+          <Kitchen />
+        </BlogProvider>
+      </Suspense>
       <UpDownGradient className="w-full h-40 rotate-180" />
       <Testimonials />
       <UpDown className="w-full h-auto" />
